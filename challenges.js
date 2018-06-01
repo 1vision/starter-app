@@ -13,82 +13,96 @@ const challenges = [
         ],
         seed: {
             code: [
-                "<div id='preview-container'>",
-                "<link rel='stylesheet' href='preview-style.css'>",
-                "<img style='width: 150px; height: 150px' id='img-cont' onerror='this.src=`assets/err.png`'>",
-                "<script type='text/javascript'>",
-                "var img = document.getElementById('img-cont');var body = document.getElementsByTagName('body')[0];",
-                "function createAnimal(animal) {img.src = `assets/${animal.toLowerCase().trim()}.svg`;}",
-                "function chooseColor(color) {body.className=color.toLowerCase().trim();}",
-                "createAnimal('animal');",
-                "chooseColor('color');",
-                "",
-                "</script>",
-                "</div>"
+                "/*",
+                "   A function which returns the summation of arguments",
+                "*/",
+                "function numbersSum(numA, numB) {",
+                    "var result;",
+                    "",
+                    "// Write your code below",
+                    "",
+                    "return result;",
+                "}"
+                // "<div id='preview-container'>",
+                // "<link rel='stylesheet' href='preview-style.css'>",
+                // "<img style='width: 150px; height: 150px' id='img-cont' onerror='this.src=`assets/err.png`'>",
+                // "<script type='text/javascript'>",
+                // "var img = document.getElementById('img-cont');var body = document.getElementsByTagName('body')[0];",
+                // "function createAnimal(animal) {img.src = `assets/${animal.toLowerCase().trim()}.svg`;}",
+                // "function chooseColor(color) {body.className=color.toLowerCase().trim();}",
+                // "createAnimal('animal');",
+                // "chooseColor('color');",
+                // "",
+                // "</script>",
+                // "</div>"
             ],
             hiddenLines: [
-                {start: -1, end: 6}, {start: 9, end: 20}
+                {start: -1, end: -1}, {start: 9, end: 20}
             ]
         },
         tests: [
+            // {
+            //   test: "\nnumbersSum(1,2)", testType: 'eval', result: 3 },
+            // }
             {
-                test: "$('#preview').contents().find('#img-cont')[0].src.match(/monkey.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/horse.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/tiger.svg/ig)",
+                test: "$('#preview').contents().find('numbersSum')",
                 message: "Did you change animal to either monkey, horse or tiger?\nCheck that you don't have extra spaces."
-            },
-            {
-                test: "$('#preview').contents().find('body')[0].className === 'red' || $('#preview').contents().find('body')[0].className === 'green' || $('body').className === 'green' || $('#preview').contents().find('body')[0].className === 'blue'",
-                message: "Did you change color to either red, green or blue?"
             }
+            // {
+            //     test: "$('#preview').contents().find('#img-cont')[0].src.match(/monkey.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/horse.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/tiger.svg/ig)",
+            //     message: "Did you change animal to either monkey, horse or tiger?\nCheck that you don't have extra spaces."
+            // },
+            // {
+            //     test: "$('#preview').contents().find('body')[0].className === 'red' || $('#preview').contents().find('body')[0].className === 'green' || $('body').className === 'green' || $('#preview').contents().find('body')[0].className === 'blue'",
+            //     message: "Did you change color to either red, green or blue?"
+            // }
         ],
-        callbacks: [
-            () => { animal = /\/(\w+)\.svg/.exec($('#preview').contents().find('#img-cont')[0].src)[1]; },
-            () => { color = $('#preview').contents().find('body')[0].className; },
-        ]
+        callbacks: []
     },
-  {
-    number: 1,
-    name: "#1 Welcome to 'Hour of Code'!",
-    instructions: [
-      "In this adventure, we will be playing with an animal using code!",
-      "Choose your animal, and your color.",
-      "<div class='animal-container'><div class='monkey'><span>Monkey</span> <img class='animal' src='assets/monkey.svg' alt='monkey'></div><div class='horse'><span>Horse</span> <img class='animal' src='assets/horse.svg' alt='horse'></div><div class='tiger'><span>Tiger</span> <img class='animal' src='assets/tiger.svg' alt='tiger'></div></div>",
-      "<div class='color-container'><div class='red'>Red</div><div class='green'>Green</div><div class='blue'>Blue</div></div>",
-      "Create your animal below by changing <span class='inline-code'>animal</span> and <span class='inline-code'>color</span> to your selection, leaving the quotes."
-    ],
-    seed: {
-      code: [
-        "<div id='preview-container'>",
-        "<link rel='stylesheet' href='preview-style.css'>",
-        "<img style='width: 150px; height: 150px' id='img-cont' onerror='this.src=`assets/err.png`'>",
-        "<script type='text/javascript'>",
-        "var img = document.getElementById('img-cont');var body = document.getElementsByTagName('body')[0];",
-        "function createAnimal(animal) {img.src = `assets/${animal.toLowerCase().trim()}.svg`;}",
-        "function chooseColor(color) {body.className=color.toLowerCase().trim();}",
-        "createAnimal('animal');",
-        "chooseColor('color');",
-        "",
-        "</script>",
-        "</div>"
-      ],
-      hiddenLines: [
-        {start: -1, end: 6}, {start: 9, end: 20}
-      ]
-    },
-    tests: [
-      {
-        test: "$('#preview').contents().find('#img-cont')[0].src.match(/monkey.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/horse.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/tiger.svg/ig)",
-        message: "Did you change animal to either monkey, horse or tiger?\nCheck that you don't have extra spaces."
-      },
-      {
-        test: "$('#preview').contents().find('body')[0].className === 'red' || $('#preview').contents().find('body')[0].className === 'green' || $('body').className === 'green' || $('#preview').contents().find('body')[0].className === 'blue'",
-        message: "Did you change color to either red, green or blue?"
-      }
-    ],
-    callbacks: [
-      () => { animal = /\/(\w+)\.svg/.exec($('#preview').contents().find('#img-cont')[0].src)[1]; },
-      () => { color = $('#preview').contents().find('body')[0].className; },
-    ]
-  },
+    // {
+    //   number: 1,
+    //   name: "#1 Welcome to 'Hour of Code'!",
+    //   instructions: [
+    //     "In this adventure, we will be playing with an animal using code!",
+    //     "Choose your animal, and your color.",
+    //     "<div class='animal-container'><div class='monkey'><span>Monkey</span> <img class='animal' src='assets/monkey.svg' alt='monkey'></div><div class='horse'><span>Horse</span> <img class='animal' src='assets/horse.svg' alt='horse'></div><div class='tiger'><span>Tiger</span> <img class='animal' src='assets/tiger.svg' alt='tiger'></div></div>",
+    //     "<div class='color-container'><div class='red'>Red</div><div class='green'>Green</div><div class='blue'>Blue</div></div>",
+    //     "Create your animal below by changing <span class='inline-code'>animal</span> and <span class='inline-code'>color</span> to your selection, leaving the quotes."
+    //   ],
+    //   seed: {
+    //     code: [
+    //       "<div id='preview-container'>",
+    //       "<link rel='stylesheet' href='preview-style.css'>",
+    //       "<img style='width: 150px; height: 150px' id='img-cont' onerror='this.src=`assets/err.png`'>",
+    //       "<script type='text/javascript'>",
+    //       "var img = document.getElementById('img-cont');var body = document.getElementsByTagName('body')[0];",
+    //       "function createAnimal(animal) {img.src = `assets/${animal.toLowerCase().trim()}.svg`;}",
+    //       "function chooseColor(color) {body.className=color.toLowerCase().trim();}",
+    //       "createAnimal('animal');",
+    //       "chooseColor('color');",
+    //       "",
+    //       "</script>",
+    //       "</div>"
+    //     ],
+    //     hiddenLines: [
+    //       {start: -1, end: 6}, {start: 9, end: 20}
+    //     ]
+    //   },
+    //   tests: [
+    //     {
+    //       test: "$('#preview').contents().find('#img-cont')[0].src.match(/monkey.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/horse.svg/ig) || $('#preview').contents().find('#img-cont')[0].src.match(/tiger.svg/ig)",
+    //       message: "Did you change animal to either monkey, horse or tiger?\nCheck that you don't have extra spaces."
+    //     },
+    //     {
+    //       test: "$('#preview').contents().find('body')[0].className === 'red' || $('#preview').contents().find('body')[0].className === 'green' || $('body').className === 'green' || $('#preview').contents().find('body')[0].className === 'blue'",
+    //       message: "Did you change color to either red, green or blue?"
+    //     }
+    //   ],
+    //   callbacks: [
+    //     () => { animal = /\/(\w+)\.svg/.exec($('#preview').contents().find('#img-cont')[0].src)[1]; },
+    //     () => { color = $('#preview').contents().find('body')[0].className; },
+    //   ]
+    // },
   {
     number: 2,
     name: "#2 Making Friends",

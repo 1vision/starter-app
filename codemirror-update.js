@@ -51,7 +51,7 @@ $(() => {
   var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
     mode: 'htmlmixed',
     lineNumbers: true,
-    lineNumberFormatter: () => "",
+    // lineNumberFormatter: () => "",
     theme: "mdn-like elegant"
   });
 
